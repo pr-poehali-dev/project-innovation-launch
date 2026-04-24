@@ -1,7 +1,7 @@
 import json
 import os
 import urllib.request
-import urllib.parse
+import urllib.parse  # noqa
 
 
 def handler(event: dict, context) -> dict:
