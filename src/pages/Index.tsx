@@ -16,13 +16,26 @@ const scrollTo = (id: string) => {
 const ACCENT = "#6C63FF"
 const CARD_BG = "#141B2B"
 
+const SEND_LEAD_URL = "https://functions.poehali.dev/b0d6585c-a8d7-49c6-895e-2f7b7ed943e5"
+
 export default function Index() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", marketplace: "" })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setLoading(true)
+    try {
+      await fetch(SEND_LEAD_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+    } finally {
+      setLoading(false)
+      setSent(true)
+    }
   }
 
   return (
@@ -353,10 +366,11 @@ export default function Index() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full rounded-xl py-4 text-lg font-bold text-white transition-all hover:opacity-90 mt-2"
+                    disabled={loading}
+                    className="w-full rounded-xl py-4 text-lg font-bold text-white transition-all hover:opacity-90 mt-2 disabled:opacity-60"
                     style={{ background: "linear-gradient(135deg, #6C63FF, #9b5de5)" }}
                   >
-                    Отправить заявку
+                    {loading ? "Отправляем..." : "Отправить заявку"}
                   </button>
                   <p className="text-white/30 text-xs text-center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
                 </form>
