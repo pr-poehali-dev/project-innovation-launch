@@ -1,0 +1,18 @@
+{
+  "tests": [
+    {
+      "name": "Send lead to Telegram",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тест",
+        "phone": "+7 (999) 123-45-67",
+        "email": "test@test.ru",
+        "marketplace": "wb"
+      },
+      "expectedStatus": 200,
+      "expectedBody": { "ok": true },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
