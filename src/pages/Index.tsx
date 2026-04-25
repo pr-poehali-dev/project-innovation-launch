@@ -311,57 +311,26 @@ export default function Index() {
           </div>
         </section>
 
-        {/* ── КЕЙСЫ ── */}
+        {/* ── ДОВЕРИЕ ── */}
         <section id="cases" className="py-24 px-5 sm:px-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Кейсы</h2>
-              <p className="text-white/60">Реальные результаты наших клиентов</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Почему нам доверяют первые клиенты</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { mp: "Wildberries", category: "Детские игрушки", result: "+187%", metric: "рост выручки за 2 месяца", detail: "Оптимизировали 45 карточек, настроили автоматическую рекламу, собрали 280 отзывов" },
-                { mp: "Ozon", category: "Товары для дома", result: "×3", metric: "оборот за 3 месяца", detail: "Переработали контент, подключили Premium-подписку, снизили ДРР с 38% до 14%" },
-                { mp: "Яндекс Маркет", category: "Электроника", result: "ТОП-5", metric: "в категории за 6 недель", detail: "Полная оптимизация, работа с рейтингом, A/B тест обложек товаров" },
-              ].map(({ mp, category, result, metric, detail }) => (
-                <div key={category} className="rounded-2xl p-8 border border-white/10 flex flex-col gap-4 hover:border-white/20 transition-all" style={{ background: CARD_BG }}>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold rounded-full px-3 py-1" style={{ background: "rgba(108,99,255,0.2)", color: "#a78bfa" }}>{mp}</span>
-                    <span className="text-white/40 text-xs">{category}</span>
+                { icon: "ShieldCheck", title: "Гарантия возврата денег", desc: "Если за месяц SEO-позиции не выросли — вернём стоимость оптимизации." },
+                { icon: "CreditCard", title: "Постоплата", desc: "Для первых трёх клиентов оплата только после первых улучшений." },
+                { icon: "Eye", title: "Прозрачность", desc: "Вы видите, кто конкретный исполнитель — фрилансер с опытом 2–4 года." },
+                { icon: "UserCheck", title: "Личный контроль", desc: "Основатель проверяет каждую карточку перед отправкой." },
+              ].map(({ icon, title, desc }) => (
+                <div key={title} className="rounded-2xl p-8 border border-white/10 flex gap-5 items-start transition-all hover:border-white/20" style={{ background: CARD_BG }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(108,99,255,0.2)" }}>
+                    <Icon name={icon} size={22} style={{ color: "#a78bfa" }} />
                   </div>
                   <div>
-                    <div className="text-5xl font-black" style={{ color: ACCENT }}>{result}</div>
-                    <div className="text-white/70 font-medium mt-1">{metric}</div>
-                  </div>
-                  <p className="text-white/50 text-sm leading-relaxed border-t border-white/10 pt-4">{detail}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── ОТЗЫВЫ ── */}
-        <section className="py-24 px-5 sm:px-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Отзывы селлеров</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { name: "Ирина К.", store: "Магазин детской одежды, WB", text: "За 6 недель выручка выросла в 2.5 раза. Команда реально знает алгоритмы WB изнутри. Рекомендую всем, кто хочет результат, а не обещания.", stars: 5 },
-                { name: "Алексей М.", store: "Товары для кухни, Ozon", text: "Скептически относился к агентствам, но ребята доказали результатом. ДРР упал с 40% до 12%, продажи растут третий месяц подряд.", stars: 5 },
-                { name: "Светлана Р.", store: "Косметика, WB + Ozon", text: "Взяли сразу два маркетплейса — управляют системно. Отчёты каждую неделю, всегда на связи. Наконец-то нашли нормальное агентство!", stars: 5 },
-              ].map(({ name, store, text, stars }) => (
-                <div key={name} className="rounded-2xl p-8 border border-white/10 flex flex-col gap-4" style={{ background: CARD_BG }}>
-                  <div className="flex gap-1">
-                    {Array.from({ length: stars }).map((_, i) => (
-                      <Icon key={i} name="Star" size={16} style={{ color: "#f59e0b", fill: "#f59e0b" }} />
-                    ))}
-                  </div>
-                  <p className="text-white/75 text-sm leading-relaxed flex-1">«{text}»</p>
-                  <div>
-                    <div className="text-white font-semibold">{name}</div>
-                    <div className="text-white/40 text-xs mt-0.5">{store}</div>
+                    <div className="text-white font-bold text-lg mb-2">{title}</div>
+                    <p className="text-white/60 text-sm leading-relaxed">{desc}</p>
                   </div>
                 </div>
               ))}
