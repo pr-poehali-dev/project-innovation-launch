@@ -47,11 +47,14 @@ export default function Navbar() {
           <button onClick={() => scrollTo("services")} className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer">
             <span className="relative z-20">Услуги</span>
           </button>
-          <button onClick={() => scrollTo("cases")} className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer">
-            <span className="relative z-20">Кейсы</span>
-          </button>
           <button onClick={() => scrollTo("about")} className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer">
             <span className="relative z-20">О нас</span>
+          </button>
+          <button onClick={() => scrollTo("pricing")} className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer">
+            <span className="relative z-20">Тарифы</span>
+          </button>
+          <button onClick={() => scrollTo("cases")} className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer">
+            <span className="relative z-20">Доверие</span>
           </button>
           <button onClick={() => scrollTo("contact")} className="relative px-4 py-2 text-white/70 hover:text-white transition-colors cursor-pointer">
             <span className="relative z-20">Контакты</span>
@@ -108,7 +111,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm md:hidden">
           <div className="absolute top-24 left-4 right-4 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-6" style={{ background: "rgba(10,15,26,0.95)" }}>
             <nav className="flex flex-col space-y-2">
-              {[["services", "Услуги"], ["cases", "Кейсы"], ["about", "О нас"], ["contact", "Контакты"]].map(([id, label]) => (
+              {[["services", "Услуги"], ["about", "О нас"], ["pricing", "Тарифы"], ["cases", "Доверие"], ["contact", "Контакты"]].map(([id, label]) => (
                 <button key={id} onClick={() => scrollTo(id)} className="text-left px-4 py-3 text-lg font-medium text-white/80 hover:text-white transition-colors rounded-lg hover:bg-white/10">
                   {label}
                 </button>
