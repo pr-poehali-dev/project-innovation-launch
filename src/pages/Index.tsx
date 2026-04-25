@@ -143,28 +143,23 @@ export default function Index() {
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-white">Стартап-агентство с командой сильных специалистов</h2>
                 <p className="text-white/65 leading-relaxed">
-                  Мы собрали команду фрилансеров: SEO-специалисты, дизайнеры инфографики, копирайтеры и аналитики маркетплейсов. У каждого 2–4 года работы с Wildberries, Ozon и Яндекс Маркет.
+                  Меня зовут Иван — я основатель TopSeller. Я собрал команду фрилансеров: SEO-специалисты, дизайнеры инфографики, копирайтеры и аналитики маркетплейсов. У каждого 2–4 года работы с Wildberries, Ozon и Яндекс Маркет.
                 </p>
                 <p className="text-white/65 leading-relaxed">
-                  Мы новые — и это наш плюс: не гоним поток клиентов, а выкладываемся на 200% ради каждого проекта. Нам важно, чтобы вы нас рекомендовали.
+                  Мы новые — и это наш плюс: не гоним поток клиентов, а выкладываемся на 200% ради каждого проекта. Я лично проверяю каждую карточку перед сдачей — это моя гарантия качества.
                 </p>
               </div>
-              <div className="p-10 md:p-14 flex flex-col justify-center gap-5" style={{ background: "rgba(108,99,255,0.06)" }}>
-                <h3 className="text-white font-bold text-lg">Что вы получаете:</h3>
-                <ul className="flex flex-col gap-4">
-                  {[
-                    { icon: "Eye", text: "Прозрачная схема — вы знаете исполнителя и можете влиять на процесс" },
-                    { icon: "ShieldCheck", text: "Гарантия: SEO-позиции не выросли за месяц — вернём деньги за эту часть" },
-                    { icon: "UserCheck", text: "Личный контроль: основатель проверяет каждую карточку перед сдачей" },
-                  ].map(({ icon, text }) => (
-                    <li key={text} className="flex items-start gap-3 text-white/75 text-sm">
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style={{ background: "rgba(108,99,255,0.2)" }}>
-                        <Icon name={icon} size={15} style={{ color: "#a78bfa" }} />
-                      </div>
-                      {text}
-                    </li>
-                  ))}
-                </ul>
+              <div className="relative min-h-[320px] md:min-h-0 overflow-hidden" style={{ background: "rgba(108,99,255,0.06)" }}>
+                <img
+                  src="https://cdn.poehali.dev/projects/90fe917b-0747-4d25-b611-c94aac899ff0/bucket/9cdfa925-98c7-4560-bdac-61ccc6d0d3b7.jpg"
+                  alt="Иван — основатель TopSeller"
+                  className="w-full h-full object-cover object-top"
+                  style={{ minHeight: "320px" }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-5" style={{ background: "linear-gradient(to top, rgba(10,15,26,0.9) 0%, transparent 100%)" }}>
+                  <div className="text-white font-bold text-lg">Иван</div>
+                  <div className="text-white/55 text-sm">Основатель & управляющий партнёр</div>
+                </div>
               </div>
             </div>
 
