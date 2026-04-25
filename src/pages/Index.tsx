@@ -19,7 +19,7 @@ const CARD_BG = "#141B2B"
 const SEND_LEAD_URL = "https://functions.poehali.dev/b0d6585c-a8d7-49c6-895e-2f7b7ed943e5"
 
 export default function Index() {
-  const [form, setForm] = useState({ name: "", phone: "", email: "", marketplace: "" })
+  const [form, setForm] = useState({ name: "", phone: "", email: "", marketplace: "", tariff: "" })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -390,20 +390,37 @@ export default function Index() {
                       style={{ background: "rgba(255,255,255,0.05)" }}
                     />
                   </div>
-                  <div>
-                    <label className="text-white/60 text-sm mb-2 block">Маркетплейс</label>
-                    <select
-                      value={form.marketplace}
-                      onChange={e => setForm(p => ({ ...p, marketplace: e.target.value }))}
-                      className="w-full rounded-xl px-4 py-3 text-white border border-white/10 outline-none focus:border-violet-500 transition-colors appearance-none"
-                      style={{ background: "#141B2B" }}
-                    >
-                      <option value="">Выберите маркетплейс</option>
-                      <option value="wb">Wildberries</option>
-                      <option value="ozon">Ozon</option>
-                      <option value="ym">Яндекс Маркет</option>
-                      <option value="all">Все площадки</option>
-                    </select>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="text-white/60 text-sm mb-2 block">Маркетплейс</label>
+                      <select
+                        value={form.marketplace}
+                        onChange={e => setForm(p => ({ ...p, marketplace: e.target.value }))}
+                        className="w-full rounded-xl px-4 py-3 text-white border border-white/10 outline-none focus:border-violet-500 transition-colors appearance-none"
+                        style={{ background: "#141B2B" }}
+                      >
+                        <option value="">Выберите маркетплейс</option>
+                        <option value="wb">Wildberries</option>
+                        <option value="ozon">Ozon</option>
+                        <option value="ym">Яндекс Маркет</option>
+                        <option value="all">Все площадки</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-white/60 text-sm mb-2 block">Тариф</label>
+                      <select
+                        value={form.tariff}
+                        onChange={e => setForm(p => ({ ...p, tariff: e.target.value }))}
+                        className="w-full rounded-xl px-4 py-3 text-white border border-white/10 outline-none focus:border-violet-500 transition-colors appearance-none"
+                        style={{ background: "#141B2B" }}
+                      >
+                        <option value="">Выберите тариф</option>
+                        <option value="start">Старт — 15 000 ₽/мес</option>
+                        <option value="business">Бизнес — 30 000 ₽/мес</option>
+                        <option value="all">Всё включено — 50 000 ₽/мес</option>
+                        <option value="unknown">Ещё не решил</option>
+                      </select>
+                    </div>
                   </div>
                   <button
                     type="submit"
@@ -460,12 +477,12 @@ export default function Index() {
               <span className="text-white font-bold text-lg">TopSeller</span>
             </div>
             <div className="text-white/40 text-sm text-center">
-              © 2024 TopSeller. Продвижение на маркетплейсах
+              © 2026 TopSeller. Продвижение на маркетплейсах
             </div>
             <div className="flex items-center gap-4">
-              <a href="mailto:hello@topseller.ru" className="text-white/50 hover:text-white transition-colors text-sm flex items-center gap-2">
+              <a href="mailto:business1its1me@gmail.com" className="text-white/50 hover:text-white transition-colors text-sm flex items-center gap-2">
                 <Icon name="Mail" size={16} />
-                hello@topseller.ru
+                business1its1me@gmail.com
               </a>
               <a href="#" className="text-white/50 hover:text-white transition-colors">
                 <Icon name="Send" size={18} />
