@@ -177,7 +177,7 @@ export default function Index() {
                 <Icon name="Gift" size={24} style={{ color: "#f7b32b" }} />
               </div>
               <div className="flex-grow">
-                <div className="text-white font-bold text-lg mb-1">Первый месяц — особые условия для 3 первых клиентов</div>
+                <div className="text-white font-bold text-lg mb-1">Первый месяц — особые условия</div>
                 <div className="flex flex-col sm:flex-row gap-4 mt-3">
                   {[
                     { icon: "Search", text: "Бесплатный расширенный аудит стоимостью 10 000 ₽" },
