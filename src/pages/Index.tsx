@@ -166,72 +166,104 @@ export default function Index() {
         <section id="pricing" className="py-24 px-5 sm:px-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Тарифы</h2>
-              <p className="text-white/60">Выберите подходящий формат сотрудничества</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Пакеты продвижения на маркетплейсах</h2>
+              <p className="text-white/60 max-w-xl mx-auto">SEO, дизайн, репутация — выберите стратегию роста для вашего бизнеса на Ozon / Wildberries</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
                   name: "Старт",
-                  price: "29 900 ₽",
-                  period: "/ мес",
-                  desc: "Для начинающих селлеров",
-                  features: ["1 маркетплейс", "Оптимизация 10 карточек", "Настройка рекламы", "Ежемесячный отчёт"],
-                  accent: false,
+                  price: "15 000 ₽",
+                  desc: "Для первых шагов и тестирования гипотез",
+                  features: [
+                    { text: "SEO-оптимизация до 30 карточек", muted: false },
+                    { text: "Еженедельный отчёт по позициям", muted: false },
+                    { text: "Сбор семантического ядра", muted: false },
+                    { text: "Чат-поддержка 24/7", muted: false },
+                    { text: "Без дизайна и инфографики", muted: true },
+                  ],
+                  popular: false,
+                  btnText: "Выбрать «Старт»",
                 },
                 {
                   name: "Бизнес",
-                  price: "59 900 ₽",
-                  period: "/ мес",
-                  desc: "Для растущих магазинов",
-                  features: ["2 маркетплейса", "Оптимизация 30 карточек", "Ведение рекламы", "Работа с отзывами", "Еженедельные отчёты"],
-                  accent: true,
+                  price: "30 000 ₽",
+                  desc: "Основной драйвер продаж для селлеров",
+                  features: [
+                    { text: "Всё из «Старта» (до 50 карточек)", muted: false },
+                    { text: "Дизайн инфографики — до 5 слайдов/мес", muted: false },
+                    { text: "Анализ конкурентов (цены, ключи) 2 раза/мес", muted: false },
+                    { text: "Приоритетная поддержка", muted: false },
+                    { text: "SEO-аудит + рекомендации", muted: false },
+                  ],
+                  popular: true,
+                  btnText: "Запустить «Бизнес»",
                 },
                 {
-                  name: "ВИП",
-                  price: "от 99 900 ₽",
-                  period: "/ мес",
-                  desc: "Под ключ для крупных брендов",
-                  features: ["Все маркетплейсы", "Неограниченно карточек", "Личный менеджер 24/7", "Фото и видео контент", "Стратегия развития"],
-                  accent: false,
+                  name: "Всё включено",
+                  price: "50 000 ₽",
+                  desc: "Полный комплекс | максимальный рост",
+                  features: [
+                    { text: "Всё из «Бизнес» (безлимит карточек)", muted: false },
+                    { text: "Управление отзывами / репутацией", muted: false },
+                    { text: "Настройка рекламы на маркетплейсе", muted: false },
+                    { text: "Расширенная аналитика + KPI", muted: false },
+                    { text: "Личный менеджер 24/7", muted: false },
+                  ],
+                  popular: false,
+                  btnText: "Взять «Всё включено»",
                 },
-              ].map(({ name, price, period, desc, features, accent }) => (
+              ].map(({ name, price, desc, features, popular, btnText }) => (
                 <div
                   key={name}
-                  className="rounded-2xl p-8 border flex flex-col gap-6 transition-all"
+                  className="rounded-2xl p-8 border flex flex-col gap-5 transition-all hover:-translate-y-1"
                   style={{
-                    background: accent ? "linear-gradient(135deg, rgba(108,99,255,0.25), rgba(155,93,229,0.15))" : CARD_BG,
-                    borderColor: accent ? ACCENT : "rgba(255,255,255,0.1)",
-                    boxShadow: accent ? `0 0 40px rgba(108,99,255,0.25)` : "none",
+                    background: popular ? "linear-gradient(135deg, rgba(108,99,255,0.25), rgba(155,93,229,0.15))" : CARD_BG,
+                    borderColor: popular ? "#f7b32b" : "rgba(255,255,255,0.1)",
+                    boxShadow: popular ? "0 0 40px rgba(247,179,43,0.15)" : "none",
+                    position: "relative",
                   }}
                 >
-                  {accent && (
-                    <div className="text-xs font-bold text-center rounded-full py-1 px-3 w-fit mx-auto" style={{ background: ACCENT, color: "#fff" }}>
-                      Популярный
+                  {popular && (
+                    <div
+                      className="absolute -top-3 right-6 text-xs font-bold px-4 py-1 rounded-full"
+                      style={{ background: "#f7b32b", color: "#1f2a44" }}
+                    >
+                      ✓ Самый востребованный
                     </div>
                   )}
                   <div>
-                    <div className="text-white font-bold text-xl">{name}</div>
-                    <div className="text-white/50 text-sm mt-1">{desc}</div>
+                    <div className="text-white font-bold text-2xl">{name}</div>
+                    <div className="flex items-baseline gap-2 mt-3">
+                      <span className="text-3xl font-extrabold text-white">{price}</span>
+                      <span className="text-white/50 text-sm">/ месяц</span>
+                    </div>
+                    <div className="text-white/50 text-sm mt-2 pb-4 border-b border-white/10">{desc}</div>
                   </div>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-white">{price}</span>
-                    <span className="text-white/50 text-sm">{period}</span>
-                  </div>
-                  <ul className="flex flex-col gap-3">
-                    {features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-white/75 text-sm">
-                        <Icon name="Check" size={16} className="shrink-0" style={{ color: ACCENT }} />
-                        {f}
+                  <ul className="flex flex-col gap-3 flex-grow">
+                    {features.map(({ text, muted }) => (
+                      <li key={text} className={`flex items-center gap-2 text-sm ${muted ? "text-white/35" : "text-white/75"}`}>
+                        <Icon
+                          name={muted ? "X" : "Check"}
+                          size={16}
+                          className="shrink-0"
+                          style={{ color: muted ? "rgba(255,255,255,0.25)" : "#4ade80" }}
+                        />
+                        {text}
                       </li>
                     ))}
                   </ul>
                   <button
                     onClick={() => scrollTo("contact")}
-                    className="mt-auto w-full rounded-xl py-3 font-semibold text-white transition-all hover:opacity-90"
-                    style={{ background: accent ? `linear-gradient(135deg, ${ACCENT}, #9b5de5)` : "rgba(255,255,255,0.08)", border: accent ? "none" : "1px solid rgba(255,255,255,0.15)" }}
+                    className="mt-2 w-full rounded-xl py-3.5 font-semibold text-white transition-all hover:opacity-90 flex items-center justify-center gap-2"
+                    style={{
+                      background: popular
+                        ? `linear-gradient(135deg, ${ACCENT}, #9b5de5)`
+                        : "linear-gradient(98deg, #162b3c 0%, #1e3a5f 100%)",
+                    }}
                   >
-                    Заказать
+                    {btnText}
+                    <Icon name="ArrowRight" size={14} />
                   </button>
                 </div>
               ))}
