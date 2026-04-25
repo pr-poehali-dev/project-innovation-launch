@@ -151,7 +151,7 @@ export default function Index() {
               </div>
               <div className="relative min-h-[320px] md:min-h-0 overflow-hidden" style={{ background: "rgba(108,99,255,0.06)" }}>
                 <img
-                  src="https://cdn.poehali.dev/projects/90fe917b-0747-4d25-b611-c94aac899ff0/bucket/9cdfa925-98c7-4560-bdac-61ccc6d0d3b7.jpg"
+                  src="https://cdn.poehali.dev/projects/90fe917b-0747-4d25-b611-c94aac899ff0/bucket/048136c4-d8a6-463b-a2cd-8d70e8c752c3.jpg"
                   alt="Иван — основатель TopSeller"
                   className="w-full h-full object-cover object-top"
                   style={{ minHeight: "320px" }}
