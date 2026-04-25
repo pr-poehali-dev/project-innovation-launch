@@ -132,33 +132,73 @@ export default function Index() {
 
         {/* ── О НАС ── */}
         <section id="about" className="py-24 px-5 sm:px-10">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto flex flex-col gap-8">
+
+            {/* Основной блок */}
             <div className="rounded-3xl border border-white/10 overflow-hidden grid md:grid-cols-2 gap-0" style={{ background: CARD_BG }}>
               <div className="p-10 md:p-14 flex flex-col justify-center gap-6">
                 <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold w-fit" style={{ background: "rgba(108,99,255,0.2)", color: "#a78bfa" }}>
                   <Icon name="Users" size={14} />
                   О нас
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white">Команда практиков с результатами</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white">Стартап-агентство с командой сильных специалистов</h2>
                 <p className="text-white/65 leading-relaxed">
-                  Мы — небольшое агентство, которое специализируется исключительно на маркетплейсах. В команде 8 человек: аналитики, дизайнеры, таргетологи и менеджеры с опытом работы на WB, Ozon и Яндекс Маркет от 3 лет.
+                  Мы собрали команду фрилансеров: SEO-специалисты, дизайнеры инфографики, копирайтеры и аналитики маркетплейсов. У каждого 2–4 года работы с Wildberries, Ozon и Яндекс Маркет.
                 </p>
-                <div className="grid grid-cols-3 gap-4 pt-2">
-                  {[["120+", "клиентов"], ["3 года", "опыта"], ["850 млн", "выручки"]].map(([num, label]) => (
-                    <div key={label}>
-                      <div className="text-2xl font-bold text-white" style={{ color: ACCENT }}>{num}</div>
-                      <div className="text-white/50 text-sm">{label}</div>
+                <p className="text-white/65 leading-relaxed">
+                  Мы новые — и это наш плюс: не гоним поток клиентов, а выкладываемся на 200% ради каждого проекта. Нам важно, чтобы вы нас рекомендовали.
+                </p>
+              </div>
+              <div className="p-10 md:p-14 flex flex-col justify-center gap-5" style={{ background: "rgba(108,99,255,0.06)" }}>
+                <h3 className="text-white font-bold text-lg">Что вы получаете:</h3>
+                <ul className="flex flex-col gap-4">
+                  {[
+                    { icon: "Eye", text: "Прозрачная схема — вы знаете исполнителя и можете влиять на процесс" },
+                    { icon: "ShieldCheck", text: "Гарантия: SEO-позиции не выросли за месяц — вернём деньги за эту часть" },
+                    { icon: "UserCheck", text: "Личный контроль: основатель проверяет каждую карточку перед сдачей" },
+                  ].map(({ icon, text }) => (
+                    <li key={text} className="flex items-start gap-3 text-white/75 text-sm">
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style={{ background: "rgba(108,99,255,0.2)" }}>
+                        <Icon name={icon} size={15} style={{ color: "#a78bfa" }} />
+                      </div>
+                      {text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Спецпредложение */}
+            <div
+              className="rounded-3xl p-8 md:p-10 border flex flex-col md:flex-row md:items-center gap-6"
+              style={{ background: "linear-gradient(135deg, rgba(247,179,43,0.12), rgba(247,179,43,0.05))", borderColor: "rgba(247,179,43,0.35)" }}
+            >
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0" style={{ background: "rgba(247,179,43,0.2)" }}>
+                <Icon name="Gift" size={24} style={{ color: "#f7b32b" }} />
+              </div>
+              <div className="flex-grow">
+                <div className="text-white font-bold text-lg mb-1">Первый месяц — особые условия для 3 первых клиентов</div>
+                <div className="flex flex-col sm:flex-row gap-4 mt-3">
+                  {[
+                    { icon: "Search", text: "Бесплатный расширенный аудит стоимостью 10 000 ₽" },
+                    { icon: "CreditCard", text: "Постоплата — платите, когда увидите результат" },
+                  ].map(({ icon, text }) => (
+                    <div key={text} className="flex items-center gap-2 text-white/75 text-sm">
+                      <Icon name={icon} size={15} style={{ color: "#f7b32b" }} />
+                      {text}
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="relative min-h-[280px] md:min-h-0 flex items-center justify-center" style={{ background: "rgba(108,99,255,0.08)" }}>
-                <div className="text-center p-10">
-                  <div className="text-8xl mb-4">🚀</div>
-                  <p className="text-white/40 text-sm">Фото команды — скоро</p>
-                </div>
-              </div>
+              <button
+                onClick={() => scrollTo("contact")}
+                className="shrink-0 rounded-xl px-6 py-3 font-semibold text-sm transition-all hover:opacity-90 whitespace-nowrap"
+                style={{ background: "#f7b32b", color: "#1f2a44" }}
+              >
+                Занять место
+              </button>
             </div>
+
           </div>
         </section>
 
